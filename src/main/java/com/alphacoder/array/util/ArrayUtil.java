@@ -4,7 +4,6 @@ import java.util.Stack;
 
 public class ArrayUtil {
     public static char[] reverseArray(char[] inputArray){
-        char[] reverseArr= new char[inputArray.length];
         Stack<Character> stack1= new Stack<>();
         Stack<Character> stack2= new Stack<>();
         for(int i=0; i< inputArray.length; i++){
@@ -25,10 +24,10 @@ public class ArrayUtil {
 
         int i=0;
         while(!stack2.isEmpty()){
-            reverseArr[i]= stack2.pop();
+            inputArray[i]= stack2.pop();
             i++;
         }
-        System.out.println(reverseArr);
-        return reverseArr;
+        System.out.println(inputArray);
+        return inputArray;
     }
 }
