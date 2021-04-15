@@ -30,4 +30,40 @@ public class ArrayUtil {
         System.out.println(inputArray);
         return inputArray;
     }
+
+    public static char[] reverseArrayImplicitly(char[] inputArr){
+        int startIndex= 0;
+        int endIndex= 0;
+
+        for(int i=0; i<inputArr.length; i++){
+            if(inputArr[i]==' ' || i== inputArr.length-1){
+                if(i== inputArr.length-1){
+                    endIndex= inputArr.length-1;
+                }else {
+                    endIndex = i - 1;
+                }
+
+                while(startIndex<endIndex){
+                    char temp= inputArr[startIndex];
+                    inputArr[startIndex]= inputArr[endIndex];
+                    inputArr[endIndex]= temp;
+                    startIndex++;
+                    endIndex--;
+                }
+                startIndex=i+1;
+            }
+        }
+        startIndex=0;
+        endIndex= inputArr.length-1;
+
+        while(startIndex<endIndex){
+            char temp= inputArr[startIndex];
+            inputArr[startIndex]= inputArr[endIndex];
+            inputArr[endIndex]= temp;
+            startIndex++;
+            endIndex--;
+        }
+        System.out.println(inputArr);
+        return inputArr;
+    }
 }
